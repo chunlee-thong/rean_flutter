@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/model/page_model.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/app_bar_title_slide_animation.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/slide_reveal.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 
@@ -32,11 +33,15 @@ class _HomePageState extends State<HomePage> {
 
 const List<PageModel> PAGE_LIST = [
   const PageModel(
-    page: const AppBarTitleSlideAnimation(),
+    page: const AppBarTitleSlideAnimationExample(),
     name: "Appbar title slide animation",
   ),
   const PageModel(
     page: const SlideRevealAnimation(),
     name: "Slide Reveal Animation",
+  ),
+  const PageModel(
+    page: const PinterestBottomNavigationBarExample(),
+    name: "Pinterest Bottom Navigation bar",
   ),
 ];

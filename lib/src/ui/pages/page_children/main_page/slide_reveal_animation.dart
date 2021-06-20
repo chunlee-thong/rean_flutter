@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sura_flutter/sura_flutter.dart';
 
 class SlideRevealAnimation extends StatefulWidget {
   const SlideRevealAnimation({Key? key}) : super(key: key);
@@ -22,7 +23,14 @@ class _SlideRevealAnimationState extends State<SlideRevealAnimation> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(32.0),
-          child: CardSliderAnimation(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Slide this card to the right"),
+              SpaceY(16),
+              CardSliderAnimation(),
+            ],
+          ),
         ),
       ),
     );
