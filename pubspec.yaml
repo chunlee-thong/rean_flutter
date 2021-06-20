@@ -1,0 +1,43 @@
+name: rean_flutter
+description: A flutter project for code example and experimental feature
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  sura_flutter: ^0.2.5
+  flutter_icons:
+    git:
+      url: https://github.com/adarsh-technocrat/flutter-icons.git
+      branch: null-safety-migration
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/app-icon.png"
+  adaptive_icon_foreground_scale_factor: 0.66
+  adaptive_icon_background: "#62caad"
+  adaptive_icon_foreground: "assets/images/app-icon.png"
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Regular.ttf
+        - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700
