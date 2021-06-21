@@ -144,7 +144,6 @@ class TopCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         type: MaterialType.card,
-        color: Colors.white,
         elevation: 2.0,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
