@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/widgets/dummy_list_view.dart';
 
@@ -61,6 +62,7 @@ class _AppBarTitleSlideScaffoldState extends State<AppBarTitleSlideScaffold> wit
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: !kIsWeb,
         title: ValueListenableBuilder(
           valueListenable: offsetNotifier,
           child: Text(widget.title),

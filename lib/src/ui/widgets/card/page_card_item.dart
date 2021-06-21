@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/constant/app_theme_color.dart';
 import 'package:rean_flutter/src/constant/style_decoration.dart';
@@ -14,7 +15,7 @@ class PageCardItem extends StatelessWidget {
       margin: EdgeInsets.zero,
       child: InkWell(
         onTap: () {
-          PageNavigator.push(context, page.page);
+          Beamer.of(context).beamToNamed("page/${page.routeName}");
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

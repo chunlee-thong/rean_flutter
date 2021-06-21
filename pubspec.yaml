@@ -13,6 +13,7 @@ dependencies:
   sura_flutter: ^0.2.5
   shared_preferences: ^2.0.6
   provider: ^5.0.0
+  beamer: ^0.14.0
   flutter_icons:
     git:
       url: https://github.com/adarsh-technocrat/flutter-icons.git

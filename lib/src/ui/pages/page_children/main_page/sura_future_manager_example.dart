@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
@@ -26,6 +27,7 @@ class _SuraFutureManagerExampleState extends State<SuraFutureManagerExample> {
 
   @override
   Widget build(BuildContext context) {
+    print(Beamer.of(context).state.uri);
     return Scaffold(
       appBar: UIHelper.CustomAppBar(
         title: "Sura FutureManager example",

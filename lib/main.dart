@@ -1,9 +1,12 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rean_flutter/src/constant/app_theme_color.dart';
+import 'package:rean_flutter/src/model/page_model.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/services/local_storage.service.dart';
-import 'package:rean_flutter/src/ui/pages/splash/splash_screen_page.dart';
+import 'package:rean_flutter/src/ui/pages/home/home_page.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/not_found_page.dart';
 
 void main() async {
   await LocalStorage.initialize();
@@ -11,6 +14,43 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  final routerDelegate = BeamerDelegate(
+    locationBuilder: SimpleLocationBuilder(
+      routes: {
+        // Return either Widgets or BeamPages if more customization is needed
+        '/': (context, state) {
+          return BeamPage(
+            key: ValueKey("home"),
+            title: "Home",
+            child: HomePage(),
+          );
+        },
+        '/page/:page_name': (context, state) {
+          final pageRoute = state.pathParameters['page_name']!;
+          PageModel? page = PAGE_LIST.firstWhere(
+            (element) => element.routeName == pageRoute,
+            orElse: () => PageModel(
+              page: NotFoundPage(),
+              name: "Not found",
+              routeName: "",
+            ),
+          );
+          return BeamPage(
+            key: ValueKey(pageRoute),
+            title: page.name,
+            popToNamed: "/",
+            child: page.page,
+          );
+        }
+      },
+    ),
+    notFoundPage: BeamPage(
+      key: ValueKey("not-found"),
+      title: "Page not Found",
+      popToNamed: "/",
+      child: NotFoundPage(),
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -19,7 +59,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Builder(
         builder: (context) => Consumer<ThemeProvider>(
-          builder: (context, theme, child) => MaterialApp(
+          builder: (context, theme, child) => MaterialApp.router(
             title: 'Rean Flutter',
             theme: theme.isDarkTheme
                 ? ThemeData(
@@ -30,7 +70,8 @@ class MyApp extends StatelessWidget {
                     primarySwatch: AppColor.primaryColor,
                   ),
             debugShowCheckedModeBanner: false,
-            home: SplashScreenPage(),
+            routeInformationParser: BeamerParser(),
+            routerDelegate: routerDelegate,
           ),
         ),
       ),

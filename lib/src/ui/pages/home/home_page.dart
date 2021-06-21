@@ -45,17 +45,21 @@ const List<PageModel> PAGE_LIST = [
   const PageModel(
     page: const AppBarTitleSlideAnimationExample(),
     name: "Appbar title slide animation",
+    routeName: "appbar-slide",
   ),
   const PageModel(
     page: const SlideRevealAnimation(),
     name: "Slide Reveal Animation",
+    routeName: "slide-reveal-animation",
   ),
   const PageModel(
     page: const PinterestBottomNavigationBarExample(),
     name: "Pinterest Bottom Navigation bar",
+    routeName: "pinterest-bottomnavigation",
   ),
   const PageModel(
     page: const SuraFutureManagerExample(),
     name: "Sura FutureManager Example",
+    routeName: "sura-futuremanager",
   ),
 ];

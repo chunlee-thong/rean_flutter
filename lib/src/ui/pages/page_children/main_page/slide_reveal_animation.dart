@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
 class SlideRevealAnimation extends StatefulWidget {
@@ -11,8 +12,8 @@ class _SlideRevealAnimationState extends State<SlideRevealAnimation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Slide To Reveal Animation'),
+      appBar: UIHelper.CustomAppBar(
+        title: 'Slide To Reveal Animation',
         actions: [
           IconButton(
             onPressed: () {},

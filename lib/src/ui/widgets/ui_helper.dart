@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class UIHelper {
@@ -10,6 +11,13 @@ class UIHelper {
       title: Text(title),
       centerTitle: centerTitle,
       actions: actions,
+      automaticallyImplyLeading: kIsWeb ? false : true,
+      leading: kIsWeb
+          ? IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.home),
+            )
+          : null,
     );
   }
 }
