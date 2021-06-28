@@ -11,20 +11,38 @@ class FlutterCompositePatternWithContentExample extends StatefulWidget {
 
 class _FlutterCompositePatternWithContentExampleState extends State<FlutterCompositePatternWithContentExample> {
   FutureManager<List<IContent>> contentManager = FutureManager(
-      futureFunction: () async {
-        await Future.delayed(Duration(seconds: 1));
-        List<ContentModel> data = dummyData.map<ContentModel>((e) => ContentModel.fromJson(e)).toList();
+    futureFunction: () async {
+      await Future.delayed(Duration(seconds: 1));
+      List<ContentModel> data = dummyData.map<ContentModel>((e) => ContentModel.fromJson(e)).toList();
 
-        return data.map((e) {
-          return e.getContentByType();
-        }).toList();
-      },
-      onError: (err) {});
+      return data.map((e) {
+        return e.getContentByType();
+      }).toList();
+    },
+    onError: (err) {},
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: UIHelper.CustomAppBar(title: ""),
+      appBar: UIHelper.CustomAppBar(
+        title: "",
+        actions: [
+          IconButton(
+            onPressed: () {
+              ///mark all document as completed
+              final newData = contentManager.data!.map((element) {
+                if (element is ContentFile) {
+                  element.contentModel.markAsCompleted();
+                }
+                return element;
+              }).toList();
+              contentManager.updateData(newData);
+            },
+            icon: Icon(Icons.mark_email_read),
+          ),
+        ],
+      ),
       body: FutureManagerBuilder<List<IContent>>(
         futureManager: contentManager,
         ready: (context, contents) {
@@ -104,7 +122,7 @@ class ContentFile extends StatelessWidget implements IContent {
       onTap: onClick,
       leading: Icon(icon),
       trailing: Icon(
-        Icons.check,
+        Icons.check_circle_rounded,
         color: contentModel.isCompleted ? Colors.green : Colors.transparent,
       ),
       subtitle: contentModel.duration.isNotEmpty ? Text(contentModel.duration) : null,
@@ -115,8 +133,8 @@ class ContentFile extends StatelessWidget implements IContent {
   void onClick() {}
 }
 
-class ContentLession extends ContentFile {
-  ContentLession(ContentModel contentModel)
+class ContentLesson extends ContentFile {
+  ContentLesson(ContentModel contentModel)
       : super(
           contentModel: contentModel,
           icon: Icons.video_library,
@@ -148,7 +166,7 @@ class ContentModel {
   final String name;
   final String type;
   final String duration;
-  final bool isCompleted;
+  bool isCompleted;
   final List<ContentModel> children;
   ContentModel({
     required this.name,
@@ -158,11 +176,15 @@ class ContentModel {
     required this.children,
   });
 
+  void markAsCompleted() {
+    this.isCompleted = true;
+  }
+
   IContent getContentByType() {
     if (this.type == "Folder") {
       return ContentDirectory(contentModel: this);
     } else if (this.type == "Lesson") {
-      return ContentLession(this);
+      return ContentLesson(this);
     } else if (this.type == "Quiz") {
       return ContentQuiz(this);
     } else {
@@ -190,6 +212,7 @@ List<Map<String, dynamic>> dummyData = [
         "name": "Video 1",
         "type": "Lesson",
         "duration": "2h",
+        "is_completed": true,
       },
       {
         "name": "Quiz 1",
@@ -202,6 +225,7 @@ List<Map<String, dynamic>> dummyData = [
           {
             "name": "Document sub 1",
             "type": "Document",
+            "is_completed": true,
           },
           {
             "name": "Document sub 2",
@@ -214,6 +238,7 @@ List<Map<String, dynamic>> dummyData = [
   {
     "name": "Quiz 1",
     "type": "Quiz",
+    "is_completed": true,
   },
   {
     "name": "Document 1",
