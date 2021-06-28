@@ -40,7 +40,7 @@ class _SuraFutureManagerExampleState extends State<SuraFutureManagerExample> {
           ),
           IconButton(
             onPressed: () {
-              numberManager.resetData();
+              numberManager.addError("Now you got an error");
             },
             icon: Icon(Icons.error_outline),
           ),

@@ -3,11 +3,13 @@ import 'package:rean_flutter/src/model/page_model.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_custom_form.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/sura_future_manager_example.dart';
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
+import 'package:sura_flutter/sura_flutter.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -16,7 +18,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AfterBuildMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +41,11 @@ class _HomePageState extends State<HomePage> {
         }).toList(),
       ),
     );
+  }
+
+  @override
+  void afterBuild(BuildContext context) {
+    ThemeProvider.getProvider(context).initializeTheme();
   }
 }
 
@@ -67,5 +74,10 @@ const List<PageModel> PAGE_LIST = [
     page: const FlutterCompositePatternWithContentExample(),
     name: "Flutter Composite design pattern",
     routeName: "flutter-composite-design-pattern",
+  ),
+  const PageModel(
+    page: const FlutterCustomForm(),
+    name: "Flutter Custom Form",
+    routeName: "flutter-custom-form",
   ),
 ];
