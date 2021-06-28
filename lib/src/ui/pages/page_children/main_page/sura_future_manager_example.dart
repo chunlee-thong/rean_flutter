@@ -1,7 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
-import 'package:sura_flutter/sura_flutter.dart';
+import 'package:sura_manager/sura_manager.dart';
 
 class SuraFutureManagerExample extends StatefulWidget {
   const SuraFutureManagerExample({Key? key}) : super(key: key);
@@ -40,7 +40,7 @@ class _SuraFutureManagerExampleState extends State<SuraFutureManagerExample> {
           ),
           IconButton(
             onPressed: () {
-              numberManager.update(20);
+              numberManager.resetData();
             },
             icon: Icon(Icons.error_outline),
           ),

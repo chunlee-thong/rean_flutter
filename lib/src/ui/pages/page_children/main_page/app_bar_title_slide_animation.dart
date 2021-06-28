@@ -62,7 +62,6 @@ class _AppBarTitleSlideScaffoldState extends State<AppBarTitleSlideScaffold> wit
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: !kIsWeb,
         title: ValueListenableBuilder(
           valueListenable: offsetNotifier,
           child: Text(widget.title),

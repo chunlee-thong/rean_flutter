@@ -10,7 +10,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  sura_flutter: ^0.2.5
+  sura_flutter: ^0.3.0
+  sura_manager: ^0.0.1
   shared_preferences: ^2.0.6
   provider: ^5.0.0
   beamer: ^0.14.0

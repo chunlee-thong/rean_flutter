@@ -281,7 +281,14 @@ packages:
       name: sura_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.5"
+    version: "0.3.0"
+  sura_manager:
+    dependency: "direct main"
+    description:
+      name: sura_manager
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
