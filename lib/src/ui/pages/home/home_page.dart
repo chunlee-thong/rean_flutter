@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/model/page_model.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/sura_future_manager_example.dart';
@@ -61,5 +62,10 @@ const List<PageModel> PAGE_LIST = [
     page: const SuraFutureManagerExample(),
     name: "Sura FutureManager Example",
     routeName: "sura-futuremanager",
+  ),
+  const PageModel(
+    page: const FlutterCompositePatternWithContentExample(),
+    name: "Flutter Composite design pattern",
+    routeName: "flutter-composite-design-pattern",
   ),
 ];
