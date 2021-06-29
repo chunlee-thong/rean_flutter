@@ -9,6 +9,7 @@ import 'package:rean_flutter/src/ui/pages/home/home_page.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/not_found_page.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await LocalStorage.initialize();
   runApp(MyApp());
 }

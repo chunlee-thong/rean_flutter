@@ -14,7 +14,7 @@ class ThemeProvider extends ChangeNotifier {
       );
 
   void initializeTheme() {
-    bool isDark = LocalStorage.sharedPreferences.getBool(THEME_KEY) ?? true;
+    bool isDark = LocalStorage.sharedPreferences.getBool(THEME_KEY) ?? false;
     _isDarkTheme = isDark;
     notifyListeners();
   }
