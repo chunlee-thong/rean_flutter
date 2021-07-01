@@ -5,6 +5,7 @@ import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_custom_form.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/scroll_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/sura_future_manager_example.dart';
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
@@ -79,5 +80,10 @@ const List<PageModel> PAGE_LIST = [
     page: const FlutterCustomForm(),
     name: "Flutter Custom Form",
     routeName: "flutter-custom-form",
+  ),
+  const PageModel(
+    page: const ScrollRevealAnimation(),
+    name: "Scroll Reveal Animation",
+    routeName: "scroll-reveal-animation",
   ),
 ];
