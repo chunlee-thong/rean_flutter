@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "529809981426",
+    "project_id": "rean-flutter",
+    "storage_bucket": "rean-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529809981426:android:b2c9e20de6c88bc57c756b",
+        "android_client_info": {
+          "package_name": "com.chunleethong.rean_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529809981426-j644767eddp724icosvq2rfp49ttb1dp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr3adt9SKvWpPKTthjA29ZZoqSOMnp8zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529809981426-j644767eddp724icosvq2rfp49ttb1dp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "529809981426-hlqibvvdave9d60tml5c1tfgcj745sj9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chunleethong.rean-flutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

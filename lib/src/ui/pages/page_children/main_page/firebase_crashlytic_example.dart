@@ -12,14 +12,15 @@ class FirebaseCrashlyticExample extends StatefulWidget {
 class _FirebaseCrashlyticExampleState extends State<FirebaseCrashlyticExample> {
   Future onRecordError() async {
     try {
+      FirebaseCrashlytics.instance.setUserIdentifier("test-user");
       await Future.delayed(Duration(seconds: 2));
       throw "Testing error";
     } catch (ex, s) {
       await FirebaseCrashlytics.instance.recordError(
         ex,
         s,
-        reason: 'a fatal error',
-        fatal: true,
+        reason: 'just testing only',
+        fatal: false,
       );
     }
   }
@@ -39,7 +40,7 @@ class _FirebaseCrashlyticExampleState extends State<FirebaseCrashlyticExample> {
               child: Text("Crash App"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: onRecordError,
               child: Text("Record Error"),
             ),
           ],

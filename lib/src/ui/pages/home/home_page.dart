@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/model/page_model.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/firebase_crashlytic_example.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_custom_form.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
@@ -85,5 +86,10 @@ const List<PageModel> PAGE_LIST = [
     page: const ScrollRevealAnimation(),
     name: "Scroll Reveal Animation",
     routeName: "scroll-reveal-animation",
+  ),
+  const PageModel(
+    page: const FirebaseCrashlyticExample(),
+    name: "Firebase Crashlytic example",
+    routeName: "firebase-craslytic",
   ),
 ];
