@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
     <base href="/" />
 
     <meta charset="UTF-8" />
@@ -25,6 +15,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="rean_flutter" />
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
     <title>Rean Flutter</title>
     <link rel="manifest" href="manifest.json" />
@@ -97,4 +88,19 @@
       }
     </script>
   </body>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCBQPv8ePXHGumjIQq5_pQmCQWr8TeHSvU",
+      authDomain: "rean-flutter.firebaseapp.com",
+      projectId: "rean-flutter",
+      storageBucket: "rean-flutter.appspot.com",
+      messagingSenderId: "529809981426",
+      appId: "1:529809981426:web:75e681d08e1518417c756b",
+      measurementId: "G-D37LHCCKY4",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </html>
