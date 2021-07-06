@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/widgets/dummy_list_view.dart';
+import 'package:rean_flutter/src/ui/widgets/center_text.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
@@ -33,9 +34,9 @@ class _PinterestBottomNavigationBarExampleState extends State<PinterestBottomNav
         controller: pageController,
         children: [
           DummyListView(scrollController: scrollController),
-          Text("Page 2"),
-          Text("Page 3"),
-          Text("Page 4"),
+          CenterText("Page 2"),
+          CenterText("Page 3"),
+          CenterText("Page 4"),
         ],
       ),
       floatingActionButton: PinterestBottomNavigationBar(

@@ -13,8 +13,12 @@ class _FlutterCustomFormState extends State<FlutterCustomForm> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? usernameExistError = null;
+  CustomFormController<LoginForm> controller = CustomFormController(
+    field: LoginForm(),
+  );
 
   Future onSubmit() async {
+    controller.field.email;
     if (formKey.currentState!.validate()) {
       await asyncValidate();
     }
@@ -64,6 +68,10 @@ class _FlutterCustomFormState extends State<FlutterCustomForm> {
                     onPressed: onSubmit,
                     child: Text("Submit"),
                   ),
+                  CustomForm(
+                    controller: controller,
+                    child: Text(""),
+                  ),
                 ],
               ),
             ),
@@ -72,4 +80,59 @@ class _FlutterCustomFormState extends State<FlutterCustomForm> {
       ),
     );
   }
+}
+
+class CustomForm extends StatefulWidget {
+  final CustomFormController controller;
+  final Widget child;
+  const CustomForm({
+    Key? key,
+    required this.controller,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  _CustomFormState createState() => _CustomFormState();
+}
+
+class _CustomFormState extends State<CustomForm> {
+  void _initTextController() {}
+
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  @override
+  void initState() {
+    _initTextController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      onChanged: () {},
+      child: widget.child,
+    );
+  }
+}
+
+class CustomFormController<T> {
+  final T field;
+  CustomFormController({required this.field}) {}
+}
+
+// abstract class CustomFormField {
+//   void dispse();
+// }
+
+class LoginForm {
+  final String? email;
+  final String? password;
+
+  LoginForm({this.email, this.password}) {}
 }
