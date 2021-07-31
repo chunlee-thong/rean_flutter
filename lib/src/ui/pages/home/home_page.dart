@@ -10,6 +10,7 @@ import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bott
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/scroll_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/sura_future_manager_example.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/tabbar_view_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/user_guidance_example.dart';
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
@@ -103,5 +104,10 @@ const List<PageModel> PAGE_LIST = [
     page: const ImplicitAnimationExample(),
     name: "Implicit animation example",
     routeName: "implicit-animation",
+  ),
+  const PageModel(
+    page: const FlutterTabBarViewAnimationExample(),
+    name: "TabBar View Animation",
+    routeName: "tabbar-view-animation",
   ),
 ];
