@@ -17,8 +17,10 @@ dependencies:
   sura_flutter: ^0.3.0
   sura_manager: ^0.0.2
   shared_preferences: ^2.0.6
+  cached_network_image: ^3.1.0
   provider: ^5.0.0
   beamer: ^0.14.0
+  faker: ^2.0.0
   flutter_icons:
     git:
       url: https://github.com/adarsh-technocrat/flutter-icons.git

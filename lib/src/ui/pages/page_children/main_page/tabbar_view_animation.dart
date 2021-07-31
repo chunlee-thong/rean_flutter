@@ -82,8 +82,8 @@ class _FlutterTabBarViewAnimationExampleState extends State<FlutterTabBarViewAni
                         if (!_controller.indexIsChanging) _controller.offset = (_pageController.page! - _controller.index).clamp(-1.0, 1.0);
                       }
                     }
-                    double data = SuraUtils.degreeToRadian(_pageController.page! * 180);
-                    opacity = cos(data).abs();
+                    double currentPageInRadian = SuraUtils.degreeToRadian(_pageController.page! * 180);
+                    opacity = cos(currentPageInRadian).abs();
                     return true;
                   },
                   child: Opacity(

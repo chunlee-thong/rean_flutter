@@ -103,15 +103,6 @@ class _AppBarTitleSlideScaffoldState extends State<AppBarTitleSlideScaffold> wit
       ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
-          // if (notification is ScrollEndNotification) {
-          //   if (offsetNotifier.value > 0 && offsetNotifier.value < origin) {
-          //     if (scroll == Scroll.up) {
-          //       offsetNotifier.value = 0;
-          //     } else {
-          //       offsetNotifier.value = origin;
-          //     }
-          //   }
-          // }
           return true;
         },
         child: SingleChildScrollView(

@@ -33,8 +33,8 @@ class _PinterestBottomNavigationBarExampleState extends State<PinterestBottomNav
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          DummyListView(scrollController: scrollController),
-          CenterText("Page 2"),
+          DummyTileListView(scrollController: scrollController),
+          DummyImageListView(),
           CenterText("Page 3"),
           CenterText("Page 4"),
         ],
@@ -43,7 +43,7 @@ class _PinterestBottomNavigationBarExampleState extends State<PinterestBottomNav
         currentIndex: currentIndex,
         items: [
           Icon(Icons.home),
-          Icon(Icons.search),
+          Icon(Icons.image),
           Icon(Icons.message),
           CircleAvatar(
             radius: 14,

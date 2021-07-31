@@ -32,7 +32,7 @@ class _ScrollRevealAnimationState extends State<ScrollRevealAnimation> {
         controller: scrollController,
         child: Column(
           children: [
-            DummyListView(count: 10),
+            DummyTileListView(count: 10),
             RevealWrapper(
               scrollController: scrollController,
               child: SizedBox(
@@ -59,7 +59,7 @@ class _ScrollRevealAnimationState extends State<ScrollRevealAnimation> {
                 width: double.infinity,
               ),
             ),
-            DummyListView(),
+            DummyTileListView(),
           ],
         ),
       ),
