@@ -15,6 +15,7 @@ import 'package:rean_flutter/src/ui/pages/page_children/main_page/user_guidance_
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
+import 'package:uni_links/uni_links.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -49,8 +50,17 @@ class _HomePageState extends State<HomePage> with AfterBuildMixin {
   }
 
   @override
-  void afterBuild(BuildContext context) {
+  void afterBuild(BuildContext context)async {
     ThemeProvider.getProvider(context).initializeTheme();
+    final initialUri = await getInitialUri();
+    if(initialUri!=null){
+      UIHelper.showDialog(context, initialUri);
+    }
+    uriLinkStream.listen((Uri? uri) {
+      UIHelper.showDialog(context, uri);
+    }, onError: (err) {
+      infoLog(err);
+    });
   }
 }
 
