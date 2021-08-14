@@ -4,6 +4,7 @@ import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/firebase_crashlytic_example.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
+import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_dynamic_form.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_font_testing.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/implicit_animation_example.dart';
 import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
@@ -50,17 +51,15 @@ class _HomePageState extends State<HomePage> with AfterBuildMixin {
   }
 
   @override
-  void afterBuild(BuildContext context)async {
+  void afterBuild(BuildContext context) async {
     ThemeProvider.getProvider(context).initializeTheme();
     final initialUri = await getInitialUri();
-    if(initialUri!=null){
-      UIHelper.showDialog(context, initialUri);
+    if (initialUri != null) {
+      UIHelper.showToast(initialUri);
     }
     uriLinkStream.listen((Uri? uri) {
-      UIHelper.showDialog(context, uri);
-    }, onError: (err) {
-      infoLog(err);
-    });
+      UIHelper.showToast(uri);
+    }, onError: (err) {});
   }
 }
 
@@ -119,5 +118,10 @@ const List<PageModel> PAGE_LIST = [
     page: const FlutterTabBarViewAnimationExample(),
     name: "TabBar View Animation",
     routeName: "tabbar-view-animation",
+  ),
+  const PageModel(
+    page: const FlutterDynamicFormExample(),
+    name: "Flutter Dynamic Form",
+    routeName: "dynamic-form",
   ),
 ];

@@ -26,6 +26,7 @@ dependencies:
     git:
       url: https://github.com/adarsh-technocrat/flutter-icons.git
       branch: null-safety-migration
+  fluttertoast: ^8.0.8
 
 dev_dependencies:
   flutter_test:
