@@ -20,12 +20,14 @@ class _FlutterTabBarViewAnimationExampleState extends State<FlutterTabBarViewAni
     Icons.car_rental,
     Icons.bike_scooter,
     Icons.shield,
+    Icons.sd_card,
+    Icons.assessment,
   ];
 
   @override
   void initState() {
     tabController = TabController(
-      length: 3,
+      length: 5,
       vsync: this,
       initialIndex: 1,
     );
@@ -48,25 +50,66 @@ class _FlutterTabBarViewAnimationExampleState extends State<FlutterTabBarViewAni
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TabBar(
-            controller: tabController,
-            tabs: [
-              Tab(text: "Car"),
-              Tab(text: "Bike"),
-              Tab(text: "Shield"),
-            ],
-            isScrollable: true,
-            indicator: SmallUnderLineTabIndicator(
-              color: Colors.black,
-              paddingLeft: 16,
-            ),
-          ),
           Expanded(
             child: AnimatedTabBarView(
               children: icons.map((e) => TabChildren(icon: e)).toList(),
               tabController: tabController,
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: TabBar(
+        controller: tabController,
+        labelColor: Colors.blue,
+        unselectedLabelColor: Colors.grey,
+        tabs: [
+          CustomTab(
+            text: "Home",
+            icon: Icon(Icons.home),
+          ),
+          CustomTab(
+            text: "Home",
+            icon: Icon(Icons.home),
+          ),
+          CustomTab(
+            text: "Home",
+            icon: Icon(Icons.home),
+          ),
+          CustomTab(
+            text: "Home",
+            icon: Icon(Icons.home),
+          ),
+          CustomTab(
+            text: "Home",
+            icon: Icon(Icons.home),
+          ),
+        ],
+        //isScrollable: true,
+        indicator: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Theme.of(context).primaryColor, width: 3.0),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomTab extends StatelessWidget {
+  final String text;
+  final Icon icon;
+  const CustomTab({Key? key, required this.text, required this.icon}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SpaceY(),
+          icon,
+          Text(text, style: TextStyle(color: Colors.grey)),
         ],
       ),
     );
