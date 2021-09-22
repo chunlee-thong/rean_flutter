@@ -8,8 +8,9 @@ import 'package:rean_flutter/src/constant/app_theme_color.dart';
 import 'package:rean_flutter/src/model/page_model.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
 import 'package:rean_flutter/src/services/local_storage.service.dart';
-import 'package:rean_flutter/src/ui/pages/home/home_page.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/not_found_page.dart';
+
+import 'src/pages/home/home_page.dart';
+import 'src/pages/page_children/main_page/not_found_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

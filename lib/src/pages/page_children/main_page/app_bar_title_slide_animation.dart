@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/widgets/dummy_list_view.dart';
+import 'package:rean_flutter/src/pages/page_children/widgets/dummy_list_view.dart';
 
 class AppBarTitleSlideAnimationExample extends StatelessWidget {
   const AppBarTitleSlideAnimationExample({Key? key}) : super(key: key);

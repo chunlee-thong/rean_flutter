@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:rean_flutter/src/model/page_model.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/app_bar_title_slide_animation.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/firebase_crashlytic_example.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/flutter_composite_design_pattern.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/flutter_dynamic_form.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/flutter_font_testing.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/flutter_painter.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/implicit_animation_example.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/scroll_reveal_animation.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/slide_reveal_animation.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/sura_future_manager_example.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/tabbar_view_animation.dart';
+import 'package:rean_flutter/src/pages/page_children/main_page/user_guidance_example.dart';
 import 'package:rean_flutter/src/provider/theme_provider.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/app_bar_title_slide_animation.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/firebase_crashlytic_example.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_composite_design_pattern.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_dynamic_form.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/flutter_font_testing.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/implicit_animation_example.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/pinterest_bottom_navigation_bar.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/scroll_reveal_animation.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/slide_reveal_animation.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/sura_future_manager_example.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/tabbar_view_animation.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/main_page/user_guidance_example.dart';
 import 'package:rean_flutter/src/ui/widgets/card/page_card_item.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
@@ -123,5 +124,10 @@ const List<PageModel> PAGE_LIST = [
     page: const FlutterDynamicFormExample(),
     name: "Flutter Dynamic Form",
     routeName: "dynamic-form",
+  ),
+  const PageModel(
+    page: const FlutterPainter(),
+    name: "Flutter Painter",
+    routeName: "flutter-painter",
   ),
 ];

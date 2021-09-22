@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rean_flutter/src/ui/pages/page_children/widgets/dummy_list_view.dart';
+import 'package:rean_flutter/src/pages/page_children/widgets/dummy_list_view.dart';
 import 'package:rean_flutter/src/ui/widgets/ui_helper.dart';
 import 'package:sura_flutter/sura_flutter.dart';
 
